@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="12" fill="#1B365D"/>
+  <path d="M10 38h28v8H10v-8Zm30-4h8l6 6v6h-4.5a4 4 0 0 1-7.5 0H40v-12Z" fill="#FF6F00"/>
+  <circle cx="18" cy="50" r="4" fill="#FFFFFF"/>
+  <circle cx="46" cy="50" r="4" fill="#FFFFFF"/>
+  <path d="M12 22h22v12H12V22Z" fill="#FFFFFF"/>
+  <path d="M34 26h8l4 8H34V26Z" fill="#ECEFF1"/>
+  <text x="32" y="18" text-anchor="middle" fill="#FF6F00" font-family="Arial, sans-serif" font-size="10" font-weight="700">RDJ</text>
+</svg>
