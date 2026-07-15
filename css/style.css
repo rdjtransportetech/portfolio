@@ -721,6 +721,35 @@ a.contact-card:hover .contact-card-icon {
   100% { box-shadow: 0 0 0 0 rgba(255, 111, 0, 0); }
 }
 
+
+/* =========================================================
+   SCROLL REVEAL
+   ========================================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity 0.7s ease var(--reveal-delay, 0s),
+    transform 0.7s ease var(--reveal-delay, 0s);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+main > section.reveal {
+  transition-duration: 0.85s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 /* =========================================================
    RESPONSIVIDADE
    ========================================================= */

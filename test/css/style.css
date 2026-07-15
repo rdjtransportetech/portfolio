@@ -1,7 +1,7 @@
 /* =========================================================
-   RDJ TRANSPORTE — Landing Page
+   RDJ TRANSPORTE ÔÇö Landing Page
    Paleta: Azul Marinho #1B365D | Laranja #FF6F00 | Cinza Claro #ECEFF1
-   Tipografia: Oswald (títulos) + Roboto (texto)
+   Tipografia: Oswald (t├¡tulos) + Roboto (texto)
    ========================================================= */
 
 :root {
@@ -81,7 +81,7 @@ a {
   line-height: 1.7;
 }
 
-/* Botão CTA principal (Laranja) */
+/* Bot├úo CTA principal (Laranja) */
 .btn-cta-orange {
   background-color: var(--rdj-orange);
   border: 2px solid var(--rdj-orange);
@@ -369,7 +369,7 @@ a {
 }
 
 /* =========================================================
-   SOBRE — PILARES
+   SOBRE ÔÇö PILARES
    ========================================================= */
 .pillar-card {
   background-color: var(--rdj-white);
@@ -417,7 +417,7 @@ a {
 }
 
 /* =========================================================
-   SERVIÇOS
+   SERVI├çOS
    ========================================================= */
 .service-card {
   background-color: var(--rdj-white);
@@ -515,7 +515,7 @@ a {
 }
 
 /* =========================================================
-   REGIÕES ATENDIDAS
+   REGI├òES ATENDIDAS
    ========================================================= */
 .region-card {
   background-color: var(--rdj-white);
@@ -562,7 +562,7 @@ a {
 }
 
 /* =========================================================
-   CONTATO / FORMULÁRIO
+   CONTATO / FORMUL├üRIO
    ========================================================= */
 .contact-info-list li {
   display: flex;
@@ -681,7 +681,7 @@ a {
 }
 
 /* =========================================================
-   BOTÃO FLUTUANTE WHATSAPP
+   BOT├âO FLUTUANTE WHATSAPP
    ========================================================= */
 .whatsapp-float {
   position: fixed;
@@ -715,7 +715,7 @@ a {
 }
 
 /* =========================================================
-   NÚMEROS / STATS
+   N├ÜMEROS / STATS
    ========================================================= */
 .stat-card {
   background-color: var(--rdj-gray-light);
@@ -792,7 +792,7 @@ a {
 }
 
 /* =========================================================
-   INCLUSO / NÃO INCLUSO
+   INCLUSO / N├âO INCLUSO
    ========================================================= */
 .inclusao-card {
   border-radius: 14px;
@@ -842,7 +842,7 @@ a {
 }
 
 .inclusao-list li::before {
-  content: '•';
+  content: 'ÔÇó';
   position: absolute;
   left: 6px;
   color: var(--rdj-orange);
@@ -856,7 +856,7 @@ a {
 }
 
 /* =========================================================
-   CTA INTERMEDIÁRIO
+   CTA INTERMEDI├üRIO
    ========================================================= */
 .cta-mid-section {
   padding: 0;
@@ -1019,6 +1019,35 @@ a {
   border-color: var(--rdj-white);
 }
 
+
+/* =========================================================
+   SCROLL REVEAL
+   ========================================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity 0.7s ease var(--reveal-delay, 0s),
+    transform 0.7s ease var(--reveal-delay, 0s);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+main > section.reveal {
+  transition-duration: 0.85s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 /* =========================================================
    RESPONSIVIDADE
    ========================================================= */

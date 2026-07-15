@@ -125,4 +125,65 @@ document.addEventListener('DOMContentLoaded', function () {
     anoAtualEl.textContent = new Date().getFullYear();
   }
 
+  /* ---------------------------------------------------------
+     6. REVEAL AO ROLAR — seções e cards aparecem na tela
+  --------------------------------------------------------- */
+  var preferReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revealSelector = [
+    'main > section:not(#home)',
+    '.pillar-card',
+    '.service-card',
+    '.event-badge',
+    '.region-card',
+    '.contact-card',
+    '.faq-item',
+    '.hero-text',
+    '.step-card',
+    '.stat-card',
+    '.testimonial-card',
+    '.gallery-item',
+    '.inclusao-card',
+    '.brand-logo-card',
+    '.cta-mid-box'
+  ].join(', ');
+
+  var revealElements = document.querySelectorAll(revealSelector);
+
+  function marcarVisible(el) {
+    el.classList.add('is-visible');
+  }
+
+  if (preferReducedMotion) {
+    revealElements.forEach(marcarVisible);
+  } else {
+    revealElements.forEach(function (el, index) {
+      el.classList.add('reveal');
+      if (!el.matches('main > section')) {
+        el.style.setProperty('--reveal-delay', ((index % 6) * 0.08) + 's');
+      }
+    });
+
+    document.querySelectorAll('.hero-text, #home').forEach(function (el) {
+      el.classList.add('reveal', 'is-visible');
+    });
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          marcarVisible(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(function (el) {
+      if (!el.classList.contains('is-visible')) {
+        observer.observe(el);
+      }
+    });
+  }
+
 });
