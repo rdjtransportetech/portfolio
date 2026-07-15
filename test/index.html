@@ -298,22 +298,26 @@
         <div class="row g-4 justify-content-center align-items-stretch brand-logos">
           <div class="col-6 col-md-3">
             <div class="brand-logo-card">
-              <img src="https://placehold.co/220x80/ffffff/1B365D?text=Itau" alt="Logo Banco Itaú (exemplo)" loading="lazy">
+              <img src="images/Util/itau.png" alt="Logo Banco Itaú" loading="lazy">
+              <span class="brand-logo-label">Banco Itaú</span>
             </div>
           </div>
           <div class="col-6 col-md-3">
             <div class="brand-logo-card">
-              <img src="https://placehold.co/220x80/ffffff/1B365D?text=Rock+in+Rio" alt="Logo Rock in Rio (exemplo)" loading="lazy">
+              <img src="images/Util/rockinrio.png" alt="Logo Rock in Rio" loading="lazy">
+              <span class="brand-logo-label">Rock in Rio</span>
             </div>
           </div>
           <div class="col-6 col-md-3">
             <div class="brand-logo-card">
-              <img src="https://placehold.co/220x80/ffffff/1B365D?text=Lollapalooza" alt="Logo Lollapalooza (exemplo)" loading="lazy">
+              <img src="images/Util/lollapalooza.png" alt="Logo Lollapalooza" loading="lazy">
+              <span class="brand-logo-label">Lollapalooza</span>
             </div>
           </div>
           <div class="col-6 col-md-3">
-            <div class="brand-logo-card">
-              <img src="https://placehold.co/220x80/ffffff/FF6F00?text=Eventos+Privados" alt="Eventos privados de grande porte" loading="lazy">
+            <div class="brand-logo-card brand-logo-private">
+              <i class="bi bi-stars"></i>
+              <span class="brand-logo-label">Eventos Privados de Grande Porte</span>
             </div>
           </div>
         </div>
@@ -339,7 +343,7 @@
         <div class="row g-3 gallery-grid">
           <div class="col-6 col-md-4">
             <figure class="gallery-item">
-              <img src="https://images.unsplash.com/photo-1601584115197-04ecc1da58d3?w=600&h=400&fit=crop"
+              <img src="https://cloudfront-us-east-1.images.arcpublishing.com/estadao/BLCQUHMF2JL7TKDSKPVGBX5FGU.jpg"
                    alt="Caminhão de transporte na estrada" loading="lazy">
               <figcaption>Frota em operação</figcaption>
             </figure>
@@ -384,8 +388,20 @@
     </section>
 
     <!-- ===================== REGIÕES ATENDIDAS ===================== -->
-    <section id="regioes" class="section-padding bg-light-gray">
-      <div class="container">
+    <section id="regioes" class="section-padding regioes-section">
+      <!-- Camada do mapa (satélite) — atrás do conteúdo -->
+      <div class="regioes-map-bg" aria-hidden="true">
+        <iframe
+          title="Mapa de cobertura da RDJ Transporte"
+          src="https://www.google.com/maps?q=-14.2350,-51.9253&z=4&t=k&hl=pt-BR&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="regioes-map-overlay" aria-hidden="true"></div>
+
+      <div class="container regioes-content">
         <div class="row justify-content-center text-center mb-5">
           <div class="col-lg-8">
             <span class="section-tag">Cobertura Nacional</span>
