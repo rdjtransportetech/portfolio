@@ -458,19 +458,19 @@ a {
    GRANDES EVENTOS ATENDIDOS
    ========================================================= */
 .event-badge {
-  background-color: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 12px;
-  padding: 28px 15px;
+  padding: 24px 16px;
   text-align: center;
-  color: var(--rdj-white);
+  color: var(--rdj-navy);
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  gap: 14px;
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .event-badge i {
@@ -479,21 +479,32 @@ a {
   transition: transform 0.3s ease;
 }
 
+.event-logo {
+  max-width: 140px;
+  max-height: 64px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
 .event-badge span {
   font-family: var(--font-heading);
   font-weight: 500;
   font-size: 0.95rem;
   letter-spacing: 0.3px;
+  color: var(--rdj-navy);
 }
 
 .event-badge:hover {
   transform: translateY(-6px);
-  background-color: rgba(255, 111, 0, 0.1);
   border-color: var(--rdj-orange);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
 }
 
-.event-badge:hover i {
-  transform: scale(1.15);
+.event-badge:hover i,
+.event-badge:hover .event-logo {
+  transform: scale(1.08);
 }
 
 .event-support {
