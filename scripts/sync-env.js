@@ -1,6 +1,10 @@
 /**
- * Gera js/config.js a partir do arquivo .env
- * Uso: node scripts/sync-env.js
+ * Gera js/config.js a partir de:
+ * 1) variavel de ambiente WEB3FORMS_ACCESS_KEY (CI / GitHub Actions), ou
+ * 2) arquivo .env local
+ *
+ * Uso local:  node scripts/sync-env.js
+ * Uso no CI:  WEB3FORMS_ACCESS_KEY=... node scripts/sync-env.js
  */
 const fs = require('fs');
 const path = require('path');
@@ -9,23 +13,22 @@ const root = path.join(__dirname, '..');
 const envPath = path.join(root, '.env');
 const outPath = path.join(root, 'js', 'config.js');
 
-if (!fs.existsSync(envPath)) {
-  console.error('Arquivo .env não encontrado. Copie .env.example para .env e preencha a chave.');
-  process.exit(1);
+function readKeyFromEnvFile() {
+  if (!fs.existsSync(envPath)) return null;
+  const envContent = fs.readFileSync(envPath, 'utf8');
+  const match = envContent.match(/^\s*WEB3FORMS_ACCESS_KEY\s*=\s*(.+)\s*$/m);
+  if (!match) return null;
+  return match[1].trim().replace(/^["']|["']$/g, '');
 }
 
-const envContent = fs.readFileSync(envPath, 'utf8');
-const match = envContent.match(/^\s*WEB3FORMS_ACCESS_KEY\s*=\s*(.+)\s*$/m);
-
-if (!match) {
-  console.error('WEB3FORMS_ACCESS_KEY não encontrada no .env');
-  process.exit(1);
-}
-
-const accessKey = match[1].trim().replace(/^["']|["']$/g, '');
+const accessKey = (process.env.WEB3FORMS_ACCESS_KEY || readKeyFromEnvFile() || '')
+  .trim()
+  .replace(/^["']|["']$/g, '');
 
 if (!accessKey || accessKey === 'sua_chave_web3forms_aqui') {
-  console.error('Defina uma WEB3FORMS_ACCESS_KEY válida no .env');
+  console.error(
+    'WEB3FORMS_ACCESS_KEY ausente. Defina no .env local ou como secret/variavel de ambiente.'
+  );
   process.exit(1);
 }
 
@@ -35,5 +38,6 @@ window.RDJ_CONFIG = {
 };
 `;
 
+fs.mkdirSync(path.dirname(outPath), { recursive: true });
 fs.writeFileSync(outPath, configJs, 'utf8');
-console.log('js/config.js gerado com sucesso a partir do .env');
+console.log('js/config.js gerado com sucesso');
