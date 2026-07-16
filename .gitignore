@@ -1,0 +1,10 @@
+# Dependências / ambiente
+.env
+js/config.js
+
+# Sistema
+.DS_Store
+Thumbs.db
+.commit-bak/
+.git/COMMIT_MSG.txt
+node_modules/
