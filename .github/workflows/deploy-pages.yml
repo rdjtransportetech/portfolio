@@ -34,7 +34,15 @@ jobs:
       - name: Gerar js/config.js a partir do secret
         env:
           WEB3FORMS_ACCESS_KEY: ${{ secrets.WEB3FORMS_ACCESS_KEY }}
-        run: node scripts/sync-env.js
+        run: |
+          if [ -z "$WEB3FORMS_ACCESS_KEY" ]; then
+            echo "::error::Secret WEB3FORMS_ACCESS_KEY nao encontrado neste job."
+            exit 1
+          fi
+          node scripts/sync-env.js
+          test -f js/config.js
+          echo "config.js gerado:"
+          wc -c js/config.js
 
       - name: Preparar pasta de publicacao
         run: |
@@ -48,6 +56,10 @@ jobs:
             --exclude 'scripts' \
             --exclude '.gitignore' \
             ./ _site/
+          # Garante que o config foi publicado
+          test -f _site/js/config.js
+          test -f _site/.nojekyll
+          ls -la _site/js/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

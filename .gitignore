@@ -1,6 +1,5 @@
-# Dependências / ambiente
+# Dependencias / ambiente
 .env
-js/config.js
 
 # Sistema
 .DS_Store
