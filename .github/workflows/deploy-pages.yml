@@ -1,5 +1,5 @@
 # Deploy do site estatico no GitHub Pages
-# Gera js/config.js no build a partir do secret WEB3FORMS_ACCESS_KEY
+# A chave NUNCA vai para o repositorio: so existe no secret e no artifact do deploy
 name: Deploy GitHub Pages
 
 on:
@@ -31,19 +31,6 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Gerar js/config.js a partir do secret
-        env:
-          WEB3FORMS_ACCESS_KEY: ${{ secrets.WEB3FORMS_ACCESS_KEY }}
-        run: |
-          if [ -z "$WEB3FORMS_ACCESS_KEY" ]; then
-            echo "::error::Secret WEB3FORMS_ACCESS_KEY nao encontrado neste job."
-            exit 1
-          fi
-          node scripts/sync-env.js
-          test -f js/config.js
-          echo "config.js gerado:"
-          wc -c js/config.js
-
       - name: Preparar pasta de publicacao
         run: |
           mkdir -p _site
@@ -55,11 +42,36 @@ jobs:
             --exclude '.env.example' \
             --exclude 'scripts' \
             --exclude '.gitignore' \
+            --exclude 'js/config.js' \
             ./ _site/
-          # Garante que o config foi publicado
+
+      - name: Gerar js/config.js apenas no artifact (nao versionado)
+        env:
+          WEB3FORMS_ACCESS_KEY: ${{ secrets.WEB3FORMS_ACCESS_KEY }}
+        run: |
+          if [ -z "$WEB3FORMS_ACCESS_KEY" ]; then
+            echo "::error::Secret WEB3FORMS_ACCESS_KEY ausente. Configure em Settings > Secrets."
+            exit 1
+          fi
+          mkdir -p _site/js
+          # Escreve direto no _site para nao depender de arquivo no git
+          node -e '
+            const fs = require("fs");
+            const key = process.env.WEB3FORMS_ACCESS_KEY.trim();
+            if (!key) { console.error("chave vazia"); process.exit(1); }
+            const body = [
+              "/* Gerado no CI — nao versionar */",
+              "window.RDJ_CONFIG = {",
+              "  web3formsAccessKey: " + JSON.stringify(key),
+              "};",
+              ""
+            ].join("\n");
+            fs.writeFileSync("_site/js/config.js", body, "utf8");
+            console.log("config.js gerado em _site/js (" + body.length + " bytes)");
+          '
           test -f _site/js/config.js
-          test -f _site/.nojekyll
-          ls -la _site/js/
+          # Nao imprime a chave nos logs
+          grep -q "web3formsAccessKey" _site/js/config.js
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
