@@ -1,7 +1,7 @@
 /* =========================================================
    RDJ TRANSPORTE — Landing Page
    JavaScript Vanilla: header fixo, scroll suave,
-   máscara de telefone e envio do formulário via WhatsApp.
+   máscara de telefone e envio do formulário via Web3Forms.
    ========================================================= */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -83,37 +83,82 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ---------------------------------------------------------
-     4. ENVIO DO FORMULÁRIO DE ORÇAMENTO VIA WHATSAPP
+     4. ENVIO DO FORMULÁRIO VIA WEB3FORMS
   --------------------------------------------------------- */
   var formOrcamento = document.getElementById('formOrcamento');
-  var NUMERO_WHATSAPP = '11933323486'; // Substitua pelo número real da RDJ Transporte
+  var submitBtn = document.getElementById('btnEnviarOrcamento');
+  var formFeedback = document.getElementById('formFeedback');
 
-  if (formOrcamento) {
-    formOrcamento.addEventListener('submit', function (event) {
+  function showFormFeedback(type, message) {
+    if (!formFeedback) return;
+    formFeedback.className = 'form-feedback form-feedback--' + type;
+    formFeedback.textContent = message;
+    formFeedback.classList.remove('d-none');
+  }
+
+  function hideFormFeedback() {
+    if (!formFeedback) return;
+    formFeedback.classList.add('d-none');
+    formFeedback.textContent = '';
+  }
+
+  if (formOrcamento && submitBtn) {
+    formOrcamento.addEventListener('submit', async function (event) {
       event.preventDefault();
+      hideFormFeedback();
 
       if (!formOrcamento.checkValidity()) {
         formOrcamento.classList.add('was-validated');
+        showFormFeedback('error', 'Preencha todos os campos obrigatórios.');
         return;
       }
 
-      var nome = document.getElementById('nome').value.trim();
-      var telefone = document.getElementById('telefone').value.trim();
-      var tipoServico = document.getElementById('tipoServico').value.trim();
-      var cidade = document.getElementById('cidade').value.trim();
-      var mensagem = document.getElementById('mensagem').value.trim();
+      var accessKey = window.RDJ_CONFIG && window.RDJ_CONFIG.web3formsAccessKey;
+      if (!accessKey) {
+        showFormFeedback(
+          'error',
+          'Configuração ausente. Rode "node scripts/sync-env.js" para gerar js/config.js a partir do .env.'
+        );
+        return;
+      }
 
-      var texto = 'Olá, RDJ Transporte! Meu nome é ' + nome + '.' +
-        '\nTelefone: ' + telefone +
-        '\nServiço desejado: ' + tipoServico +
-        (cidade ? '\nCidade/Região: ' + cidade : '') +
-        (mensagem ? '\nDetalhes: ' + mensagem : '');
+      var formData = new FormData(formOrcamento);
+      formData.append('access_key', accessKey);
 
-      var link = 'https://wa.me/' + NUMERO_WHATSAPP + '?text=' + encodeURIComponent(texto);
+      var btnLabel = submitBtn.querySelector('.btn-label');
+      var originalText = btnLabel ? btnLabel.textContent : submitBtn.textContent;
+      if (btnLabel) {
+        btnLabel.textContent = 'Enviando...';
+      } else {
+        submitBtn.textContent = 'Enviando...';
+      }
+      submitBtn.disabled = true;
 
-      window.open(link, '_blank', 'noopener,noreferrer');
-      formOrcamento.reset();
-      formOrcamento.classList.remove('was-validated');
+      try {
+        var response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+
+        var data = await response.json();
+
+        if (response.ok && data.success) {
+          showFormFeedback('success', 'Solicitação enviada com sucesso! Em breve entraremos em contato.');
+          formOrcamento.reset();
+          formOrcamento.classList.remove('was-validated');
+        } else {
+          showFormFeedback('error', 'Erro: ' + (data.message || 'Não foi possível enviar. Tente novamente.'));
+        }
+      } catch (error) {
+        showFormFeedback('error', 'Algo deu errado. Verifique sua conexão e tente novamente.');
+      } finally {
+        if (btnLabel) {
+          btnLabel.textContent = originalText;
+        } else {
+          submitBtn.textContent = originalText;
+        }
+        submitBtn.disabled = false;
+      }
     });
   }
 

@@ -1,494 +1,825 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RDJ Transporte | Mudanças Residenciais, Comerciais e Eventos</title>
-  <meta name="description" content="RDJ Transporte: mudanças residenciais e comerciais, transporte de cenários para eventos. Frota própria de caminhões Iveco Daily. Atendimento em todo o Brasil.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RDJ Transporte | Mudanças Residenciais, Comerciais e Eventos</title>
+    <meta
+      name="description"
+      content="RDJ Transporte: mudanças residenciais e comerciais, transporte de cenários para eventos. Frota própria de caminhões Iveco Daily. Atendimento em todo o Brasil." />
 
-  <!-- Google Fonts: Oswald (Títulos) + Roboto (Textos) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Open Graph (preview WhatsApp / redes) -->
+    <meta property="og:title" content="RDJ Transporte | Sua Mudança Sem Complicações" />
+    <meta property="og:description" content="Transporte seguro com frota própria de caminhões Iveco Daily. Mudanças e logística de eventos em todo o Brasil." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="images/background.png" />
 
-  <!-- Bootstrap 5 (CDN) -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg" />
 
-  <!-- Bootstrap Icons (CDN) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Fonts: Oswald (Títulos) + Roboto (Textos) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
 
-  <!-- CSS Customizado -->
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <!-- Bootstrap 5 (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-  <!-- ===================== HEADER ===================== -->
-  <header id="topo" class="rdj-header fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark py-3">
-      <div class="container">
-        <a class="navbar-brand rdj-logo" href="#topo">
-          RDJ <span>TRANSPORTE</span>
-        </a>
+    <!-- Bootstrap Icons (CDN) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
-          aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menu">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ===================== HEADER ===================== -->
+    <header id="topo" class="rdj-header fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-dark py-3">
+        <div class="container">
+          <a class="navbar-brand rdj-logo d-flex align-items-center gap-2" href="#topo">
+            <img src="images/logo.svg" alt="Logo RDJ Transporte" class="rdj-logo-img" width="42" height="42" />
+            <span class="rdj-logo-text">RDJ <span>TRANSPORTE</span></span>
+          </a>
 
-        <div class="collapse navbar-collapse" id="navMenu">
-          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-            <li class="nav-item"><a class="nav-link rdj-nav-link" href="#topo">Início</a></li>
-            <li class="nav-item"><a class="nav-link rdj-nav-link" href="#sobre">Sobre Nós</a></li>
-            <li class="nav-item"><a class="nav-link rdj-nav-link" href="#servicos">Serviços</a></li>
-            <li class="nav-item"><a class="nav-link rdj-nav-link" href="#regioes">Regiões Atendidas</a></li>
-            <li class="nav-item"><a class="nav-link rdj-nav-link" href="#faq">FAQ</a></li>
-            <li class="nav-item"><a class="nav-link rdj-nav-link" href="#contato">Contato</a></li>
-            <li class="nav-item mt-2 mt-lg-0 ms-lg-2">
-              <a href="#contato" class="btn btn-cta-orange w-100">Solicitar Orçamento</a>
-            </li>
-          </ul>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navMenu"
+            aria-controls="navMenu"
+            aria-expanded="false"
+            aria-label="Abrir menu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+              <li class="nav-item"><a class="nav-link rdj-nav-link" href="#topo">Início</a></li>
+              <li class="nav-item"><a class="nav-link rdj-nav-link" href="#sobre">Sobre</a></li>
+              <li class="nav-item"><a class="nav-link rdj-nav-link" href="#como-funciona">Como Funciona</a></li>
+              <li class="nav-item"><a class="nav-link rdj-nav-link" href="#servicos">Serviços</a></li>
+              <li class="nav-item"><a class="nav-link rdj-nav-link" href="#galeria">Galeria</a></li>
+              <li class="nav-item"><a class="nav-link rdj-nav-link" href="#depoimentos">Depoimentos</a></li>
+              <li class="nav-item"><a class="nav-link rdj-nav-link" href="#contato">Contato</a></li>
+              <li class="nav-item mt-2 mt-lg-0 ms-lg-2">
+                <a href="#contato" class="btn btn-cta-orange w-100">Solicitar Orçamento</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
 
-  <main>
+    <main>
+      <!-- ===================== HERO SECTION ===================== -->
+      <section id="home" class="hero-section">
+        <div class="container">
+          <div class="row align-items-center gy-4">
+            <div class="col-lg-7 hero-text">
+              <h1 class="hero-title">Pequenas mudanças sem complicações</h1>
+              <p class="hero-subtitle">
+                Transporte seguro e eficiente para mudanças residenciais ou <br />
+                comerciais de pequeno porte.
+              </p>
+              <p class="hero-support">Contamos com frota própria de caminhões <strong>Iveco Daily</strong> idênticos e preparados para melhor te atender.</p>
+              <div class="d-flex flex-wrap gap-3 hero-cta-group">
+                <a
+                  href="https://wa.me/5511998523500?text=Ol%C3%A1!%20Quero%20solicitar%20um%20or%C3%A7amento%20de%20mudan%C3%A7a."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-cta-orange btn-lg hero-cta">
+                  <i class="bi bi-whatsapp"></i>
+                  Fale com um Especialista no WhatsApp
+                </a>
+                <a href="#como-funciona" class="btn btn-outline-light btn-lg hero-cta-secondary"> Como funciona </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <!-- ===================== HERO SECTION ===================== -->
-    <section id="home" class="hero-section">
-      <div class="container">
-        <div class="row align-items-center gy-5">
+      <!-- ===================== SOBRE A RDJ TRANSPORTE ===================== -->
+      <section id="sobre" class="section-padding bg-white">
+        <div class="container">
+          <div class="row justify-content-center text-center mb-5">
+            <div class="col-lg-8">
+              <span class="section-tag">Quem Somos</span>
+              <h2 class="section-title">Sobre a RDJ Transporte</h2>
+              <p class="section-text">
+                Atuamos há <strong>6 anos</strong> com transporte especializado, garantindo a segurança de seus bens do início ao fim da entrega.
+              </p>
+            </div>
+          </div>
 
-          <!-- Coluna Esquerda: Texto -->
-          <div class="col-lg-7 hero-text">
-            <h1 class="hero-title">Sua Mudança Sem Complicações</h1>
-            <p class="hero-subtitle">
-              Transporte seguro e eficiente para a sua mudança residencial ou comercial.
-            </p>
-            <p class="hero-support">
-              Contamos com frota própria de caminhões <strong>Iveco Daily</strong> idênticos e preparados
-              para melhor te atender.
-            </p>
-            <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Quero%20solicitar%20um%20or%C3%A7amento%20de%20mudan%C3%A7a."
-               target="_blank" rel="noopener noreferrer" class="btn btn-cta-orange btn-lg hero-cta">
+          <!-- Números / prova concreta -->
+          <div class="row g-3 mb-5 stats-row">
+            <div class="col-6 col-md-3">
+              <div class="stat-card text-center">
+                <strong class="stat-number">6+</strong>
+                <span class="stat-label">Anos de experiência</span>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat-card text-center">
+                <strong class="stat-number">500+</strong>
+                <span class="stat-label">Mudanças realizadas</span>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat-card text-center">
+                <strong class="stat-number">4</strong>
+                <span class="stat-label">Regiões atendidas</span>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat-card text-center">
+                <strong class="stat-number">100%</strong>
+                <span class="stat-label">Frota própria</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="pillar-card text-center h-100">
+                <div class="pillar-icon"><i class="bi bi-shield-check"></i></div>
+                <h3 class="pillar-title">Segurança Garantida</h3>
+                <p class="pillar-text">Proteção rigorosa em todo o trajeto.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="pillar-card text-center h-100">
+                <div class="pillar-icon"><i class="bi bi-clock-history"></i></div>
+                <h3 class="pillar-title">Pontualidade</h3>
+                <p class="pillar-text">Prazos respeitados à risca.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="pillar-card text-center h-100">
+                <div class="pillar-icon"><i class="bi bi-truck"></i></div>
+                <h3 class="pillar-title">Frota Própria</h3>
+                <p class="pillar-text">Equipamentos adequados para pequenas cargas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== COMO FUNCIONA ===================== -->
+      <section id="como-funciona" class="section-padding bg-light-gray">
+        <div class="container">
+          <div class="row justify-content-center text-center mb-5">
+            <div class="col-lg-8">
+              <span class="section-tag">Processo Simples</span>
+              <h2 class="section-title">Como Funciona</h2>
+              <p class="section-text">Do primeiro contato até a entrega, tudo claro e sem surpresas.</p>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+              <div class="step-card text-center h-100">
+                <div class="step-number">01</div>
+                <div class="step-icon"><i class="bi bi-chat-dots-fill"></i></div>
+                <h3 class="step-title">Orçamento</h3>
+                <p class="step-text">Você envia origem, destino e detalhes pelo WhatsApp ou formulário.</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="step-card text-center h-100">
+                <div class="step-number">02</div>
+                <div class="step-icon"><i class="bi bi-calendar-check-fill"></i></div>
+                <h3 class="step-title">Agendamento</h3>
+                <p class="step-text">Combinamos data, horário e todos os detalhes da operação.</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="step-card text-center h-100">
+                <div class="step-number">03</div>
+                <div class="step-icon"><i class="bi bi-box-seam-fill"></i></div>
+                <h3 class="step-title">Carga</h3>
+                <p class="step-text">Nossa equipe realiza a carga com proteção e organização da carga.</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="step-card text-center h-100">
+                <div class="step-number">04</div>
+                <div class="step-icon"><i class="bi bi-house-check-fill"></i></div>
+                <h3 class="step-title">Entrega</h3>
+                <p class="step-text">Descarga no destino com o mesmo cuidado do início ao fim.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== NOSSOS SERVIÇOS ===================== -->
+      <section id="servicos" class="section-padding bg-white">
+        <div class="container">
+          <div class="row justify-content-center text-center mb-5">
+            <div class="col-lg-8">
+              <span class="section-tag">O Que Fazemos</span>
+              <h2 class="section-title">Nossos Serviços</h2>
+            </div>
+          </div>
+
+          <div class="row g-4 justify-content-center mb-5">
+            <div class="col-md-6 col-lg-5">
+              <div class="service-card h-100">
+                <div class="service-icon"><i class="bi bi-house-door-fill"></i></div>
+                <h3 class="service-title">Mudanças Residenciais e Comerciais</h3>
+                <p class="service-text">Transporte planejado e cuidadoso para sua casa, escritório ou empresa.</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-5">
+              <div class="service-card h-100">
+                <div class="service-icon"><i class="bi bi-easel2-fill"></i></div>
+                <h3 class="service-title">Transporte de Cenários e Mobiliários para Eventos</h3>
+                <p class="service-text">Logística precisa e ágil para produções de qualquer porte.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Incluso / Não incluso -->
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="inclusao-card inclusao-sim h-100">
+                <h3 class="inclusao-title"><i class="bi bi-check-circle-fill"></i> O que está incluso</h3>
+                <ul class="inclusao-list">
+                  <li>Transporte com frota própria</li>
+                  <li>Carga e descarga</li>
+                  <li>Proteção básica da carga</li>
+                  <li>Acompanhamento pelo WhatsApp</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="inclusao-card inclusao-nao h-100">
+                <h3 class="inclusao-title"><i class="bi bi-x-circle-fill"></i> O que não está incluso</h3>
+                <ul class="inclusao-list">
+                  <li>Montagem e desmontagem de móveis</li>
+                  <li>Embalagem especializada sob demanda*</li>
+                  <li>Içamento por janela / Andares sem acesso</li>
+                  <li>Armazenagem prolongada</li>
+                </ul>
+                <p class="inclusao-note">*Consulte disponibilidade no orçamento.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== CTA INTERMEDIÁRIO ===================== -->
+      <section class="cta-mid-section">
+        <div class="container">
+          <div class="cta-mid-box text-center">
+            <h2 class="cta-mid-title">Pronto para agendar sua mudança?</h2>
+            <p class="cta-mid-text">Receba um orçamento rápido e sem compromisso pelo WhatsApp.</p>
+            <a
+              href="https://wa.me/11998523500?text=Ol%C3%A1!%20Quero%20solicitar%20um%20or%C3%A7amento%20de%20mudan%C3%A7a."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-cta-orange btn-lg">
               <i class="bi bi-whatsapp"></i>
-              Fale com um Especialista no WhatsApp
+              Solicitar Orçamento Agora
             </a>
           </div>
-
-          <!-- Coluna Direita: Imagem -->
-          
-
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ===================== SOBRE A RDJ TRANSPORTE ===================== -->
-    <section id="sobre" class="section-padding bg-white">
-      <div class="container">
-        <div class="row justify-content-center text-center mb-5">
-          <div class="col-lg-8">
-            <span class="section-tag">Quem Somos</span>
-            <h2 class="section-title">Sobre a RDJ Transporte</h2>
-            <p class="section-text">
-              Atuamos há <strong>6 anos</strong> com transporte especializado, garantindo a segurança
-              de seus bens do início ao fim da entrega.
-            </p>
-          </div>
-        </div>
-
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="pillar-card text-center h-100">
-              <div class="pillar-icon">
-                <i class="bi bi-shield-check"></i>
-              </div>
-              <h3 class="pillar-title">Segurança Garantida</h3>
-              <p class="pillar-text">Proteção rigorosa em todo o trajeto.</p>
+      <!-- ===================== GRANDES EVENTOS ATENDIDOS ===================== -->
+      <section id="credibilidade" class="section-padding bg-navy">
+        <div class="container">
+          <div class="row justify-content-center text-center mb-5">
+            <div class="col-lg-8">
+              <span class="section-tag section-tag-light">Credibilidade</span>
+              <h2 class="section-title text-white">Grandes Eventos Atendidos</h2>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="pillar-card text-center h-100">
-              <div class="pillar-icon">
-                <i class="bi bi-clock-history"></i>
+
+          <div class="row g-4 justify-content-center align-items-stretch brand-logos">
+            <div class="col-6 col-md-3">
+              <div class="brand-logo-card">
+                <img src="images/Util/itau.png" alt="Logo Banco Itaú" loading="lazy" />
+                <span class="brand-logo-label">Banco Itaú</span>
               </div>
-              <h3 class="pillar-title">Pontualidade</h3>
-              <p class="pillar-text">Prazos respeitados à risca.</p>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="brand-logo-card">
+                <img src="images/Util/rockinrio.png" alt="Logo Rock in Rio" loading="lazy" />
+                <span class="brand-logo-label">Rock in Rio</span>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="brand-logo-card">
+                <img src="images/Util/lollapalooza.png" alt="Logo Lollapalooza" loading="lazy" />
+                <span class="brand-logo-label">Lollapalooza</span>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="brand-logo-card brand-logo-private">
+                <i class="bi bi-stars"></i>
+                <span class="brand-logo-label">Eventos Privados de Grande Porte</span>
+              </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="pillar-card text-center h-100">
-              <div class="pillar-icon">
-                <i class="bi bi-truck"></i>
-              </div>
-              <h3 class="pillar-title">Frota Própria</h3>
-              <p class="pillar-text">Equipamentos adequados para pequenas cargas.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ===================== NOSSOS SERVIÇOS ===================== -->
-    <section id="servicos" class="section-padding bg-light-gray">
-      <div class="container">
-        <div class="row justify-content-center text-center mb-5">
-          <div class="col-lg-8">
-            <span class="section-tag">O Que Fazemos</span>
-            <h2 class="section-title">Nossos Serviços</h2>
-          </div>
-        </div>
-
-        <div class="row g-4 justify-content-center">
-          <div class="col-md-6 col-lg-5">
-            <div class="service-card h-100">
-              <div class="service-icon">
-                <i class="bi bi-house-door-fill"></i>
-              </div>
-              <h3 class="service-title">Mudanças Residenciais e Comerciais</h3>
-              <p class="service-text">
-                Transporte planejado e cuidadoso para sua casa, escritório ou empresa.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5">
-            <div class="service-card h-100">
-              <div class="service-icon">
-                <i class="bi bi-easel2-fill"></i>
-              </div>
-              <h3 class="service-title">Transporte de Cenários e Mobiliários para Eventos</h3>
-              <p class="service-text">
-                Logística precisa e ágil para produções de qualquer porte.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== GRANDES EVENTOS ATENDIDOS ===================== -->
-    <section class="section-padding bg-navy">
-      <div class="container">
-        <div class="row justify-content-center text-center mb-5">
-          <div class="col-lg-8">
-            <span class="section-tag section-tag-light">Credibilidade</span>
-            <h2 class="section-title text-white">Grandes Eventos Atendidos</h2>
-          </div>
-        </div>
-
-        <div class="row g-4 justify-content-center">
-          <div class="col-6 col-md-3">
-            <div class="event-badge">
-              <img src="images/Util/itau.png" alt="Logo Banco Itaú" class="event-logo" loading="lazy">
-              <span>Banco Itaú</span>
-            </div>
-          </div>
-          <div class="col-6 col-md-3">
-            <div class="event-badge">
-              <img src="images/Util/rockinrio.png" alt="Logo Rock in Rio" class="event-logo" loading="lazy">
-              <span>Rock in Rio</span>
-            </div>
-          </div>
-          <div class="col-6 col-md-3">
-            <div class="event-badge">
-              <img src="images/Util/lollapalooza.png" alt="Logo Lollapalooza" class="event-logo" loading="lazy">
-              <span>Lollapalooza</span>
-            </div>
-          </div>
-          <div class="col-6 col-md-3">
-            <div class="event-badge">
-              <i class="bi bi-stars"></i>
-              <span>Eventos Privados de Grande Porte</span>
-            </div>
-          </div>
-        </div>
-
-        <p class="text-center event-support mt-5 mb-0">
-          A mesma eficiência e segurança exigida pelos maiores eventos do país,
-          agora disponível para a sua mudança.
-        </p>
-      </div>
-    </section>
-
-    <!-- ===================== REGIÕES ATENDIDAS ===================== -->
-    <section id="regioes" class="section-padding bg-white">
-      <div class="container">
-        <div class="row justify-content-center text-center mb-5">
-          <div class="col-lg-8">
-            <span class="section-tag">Cobertura Nacional</span>
-            <h2 class="section-title">Regiões Atendidas</h2>
-          </div>
-        </div>
-
-        <div class="row g-4">
-          <div class="col-6 col-md-3">
-            <div class="region-card text-center h-100">
-              <i class="bi bi-geo-alt-fill"></i>
-              <h3 class="region-title">Sudeste</h3>
-            </div>
-          </div>
-          <div class="col-6 col-md-3">
-            <div class="region-card text-center h-100">
-              <i class="bi bi-geo-alt-fill"></i>
-              <h3 class="region-title">Sul</h3>
-            </div>
-          </div>
-          <div class="col-6 col-md-3">
-            <div class="region-card text-center h-100">
-              <i class="bi bi-geo-alt-fill"></i>
-              <h3 class="region-title">Nordeste</h3>
-            </div>
-          </div>
-          <div class="col-6 col-md-3">
-            <div class="region-card text-center h-100">
-              <i class="bi bi-geo-alt-fill"></i>
-              <h3 class="region-title">Norte</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== CONTATO / ORÇAMENTO ===================== -->
-    <section id="contato" class="section-padding bg-light-gray">
-      <div class="container">
-        <div class="row justify-content-center text-center">
-          <div class="col-lg-8">
-            <span class="section-tag">Vamos Conversar</span>
-            <h2 class="section-title">Solicite seu Orçamento</h2>
-            <p class="section-text mb-5">
-              Fale conosco pelo WhatsApp e nossa equipe retorna rapidamente para
-              entender os detalhes da sua mudança.
-            </p>
-          </div>
-        </div>
-
-        <div class="row g-4 justify-content-center contact-cards">
-          <div class="col-sm-6 col-md-4">
-            <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Quero%20solicitar%20um%20or%C3%A7amento%20de%20mudan%C3%A7a."
-               target="_blank" rel="noopener noreferrer" class="contact-card">
-              <div class="contact-card-icon">
-                <i class="bi bi-whatsapp"></i>
-              </div>
-              <h3 class="contact-card-title">WhatsApp</h3>
-              <p class="contact-card-value">(11) 99999-9999</p>
-            </a>
-          </div>
-
-          <div class="col-sm-6 col-md-4">
-            <a href="mailto:contato@rdjtransporte.com.br" class="contact-card">
-              <div class="contact-card-icon">
-                <i class="bi bi-envelope-fill"></i>
-              </div>
-              <h3 class="contact-card-title">E-mail</h3>
-              <p class="contact-card-value">contato@rdjtransporte.com.br</p>
-            </a>
-          </div>
-
-          <div class="col-sm-6 col-md-4">
-            <div class="contact-card contact-card-static">
-              <div class="contact-card-icon">
-                <i class="bi bi-clock-fill"></i>
-              </div>
-              <h3 class="contact-card-title">Horário</h3>
-              <p class="contact-card-value">Seg. a Sáb. — 07h às 19h</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== PERGUNTAS FREQUENTES ===================== -->
-    <section id="faq" class="section-padding faq-section">
-      <div class="container">
-        <div class="row justify-content-center text-center mb-5">
-          <div class="col-lg-8">
-            <h2 class="faq-title">Perguntas <span>Frequentes</span></h2>
-          </div>
-        </div>
-
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="accordion accordion-flush faq-accordion" id="faqAccordion">
-
-              <div class="accordion-item faq-item">
-                <h3 class="accordion-header">
-                  <button class="accordion-button collapsed faq-button" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#faq1"
-                    aria-expanded="false" aria-controls="faq1">
-                    Atendem quais regiões?
-                  </button>
-                </h3>
-                <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                  <div class="accordion-body faq-body">
-                    Atendemos as regiões Sudeste, Sul, Nordeste e Norte, com logística planejada
-                    para mudanças residenciais, comerciais e transporte de cenários para eventos.
-                  </div>
-                </div>
-              </div>
-
-              <div class="accordion-item faq-item">
-                <h3 class="accordion-header">
-                  <button class="accordion-button collapsed faq-button" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#faq2"
-                    aria-expanded="false" aria-controls="faq2">
-                    Como é feito o orçamento?
-                  </button>
-                </h3>
-                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                  <div class="accordion-body faq-body">
-                    O orçamento é personalizado. Basta entrar em contato pelo WhatsApp ou preencher
-                    o formulário informando origem, destino, volume aproximado e tipo de serviço.
-                    Nossa equipe retorna com a proposta de forma rápida e transparente.
-                  </div>
-                </div>
-              </div>
-
-              <div class="accordion-item faq-item">
-                <h3 class="accordion-header">
-                  <button class="accordion-button collapsed faq-button" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#faq3"
-                    aria-expanded="false" aria-controls="faq3">
-                    Como vocês protegem a carga?
-                  </button>
-                </h3>
-                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                  <div class="accordion-body faq-body">
-                    Utilizamos materiais de proteção adequados, empacotamento cuidadoso e organização
-                    segura no caminhão. Toda a carga é acompanhada com atenção do início ao fim da entrega.
-                  </div>
-                </div>
-              </div>
-
-              <div class="accordion-item faq-item">
-                <h3 class="accordion-header">
-                  <button class="accordion-button collapsed faq-button" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#faq4"
-                    aria-expanded="false" aria-controls="faq4">
-                    Fazem itens frágeis?
-                  </button>
-                </h3>
-                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                  <div class="accordion-body faq-body">
-                    Sim. Itens frágeis recebem cuidado especial na acomodação e no transporte,
-                    com proteção reforçada para reduzir riscos durante o trajeto.
-                  </div>
-                </div>
-              </div>
-
-              <div class="accordion-item faq-item">
-                <h3 class="accordion-header">
-                  <button class="accordion-button collapsed faq-button" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#faq5"
-                    aria-expanded="false" aria-controls="faq5">
-                    Há desmontagem / montagem?
-                  </button>
-                </h3>
-                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                  <div class="accordion-body faq-body">
-                    Realizamos o serviço completo de carga e descarga, porém
-                    <strong>não trabalhamos com montagem e desmontagem de móveis</strong>.
-                  </div>
-                </div>
-              </div>
-
-              <div class="accordion-item faq-item">
-                <h3 class="accordion-header">
-                  <button class="accordion-button collapsed faq-button" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#faq6"
-                    aria-expanded="false" aria-controls="faq6">
-                    Formas de pagamento?
-                  </button>
-                </h3>
-                <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                  <div class="accordion-body faq-body">
-                    Aceitamos as principais formas de pagamento (PIX, transferência e outras opções
-                    combinadas no orçamento). Os detalhes são confirmados junto com a proposta do serviço.
-                  </div>
-                </div>
-              </div>
-
-              <div class="accordion-item faq-item">
-                <h3 class="accordion-header">
-                  <button class="accordion-button collapsed faq-button" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#faq7"
-                    aria-expanded="false" aria-controls="faq7">
-                    Com quanto tempo de antecedência devo agendar?
-                  </button>
-                </h3>
-                <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                  <div class="accordion-body faq-body">
-                    Recomendamos agendar com a maior antecedência possível, especialmente em datas
-                    de maior movimento. Em geral, quanto antes você solicitar o orçamento,
-                    maior a chance de garantir a data ideal para a sua mudança.
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="rdj-footer">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-lg-4">
-          <a class="rdj-logo footer-logo" href="#topo">RDJ <span>TRANSPORTE</span></a>
-          <p class="footer-text mt-3">
-            Transporte especializado para mudanças residenciais, comerciais e logística de eventos,
-            com segurança e pontualidade em todo o Brasil.
+          <p class="text-center event-support mt-5 mb-0">
+            A mesma eficiência e segurança exigida pelos maiores eventos do país, agora disponível para a sua mudança.
           </p>
         </div>
+      </section>
 
-        <div class="col-lg-4">
-          <h4 class="footer-heading">Links Rápidos</h4>
-          <ul class="footer-links list-unstyled">
-            <li><a href="#topo">Início</a></li>
-            <li><a href="#sobre">Sobre Nós</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#regioes">Regiões Atendidas</a></li>
-            <li><a href="#faq">Perguntas Frequentes</a></li>
-            <li><a href="#contato">Contato</a></li>
-          </ul>
+      <!-- ===================== GALERIA ===================== -->
+      <section id="galeria" class="section-padding bg-white">
+        <div class="container">
+          <div class="row justify-content-center text-center mb-5">
+            <div class="col-lg-8">
+              <span class="section-tag">Nossa Operação</span>
+              <h2 class="section-title">Galeria</h2>
+              <p class="section-text">Imagens de exemplo — substitua pelas fotos reais da frota e dos serviços.</p>
+            </div>
+          </div>
+
+          <div class="row g-3 gallery-grid">
+            <div class="col-6 col-md-4">
+              <figure class="gallery-item">
+                <img
+                  src="https://cloudfront-us-east-1.images.arcpublishing.com/estadao/BLCQUHMF2JL7TKDSKPVGBX5FGU.jpg"
+                  alt="Caminhão de transporte na estrada"
+                  loading="lazy" />
+                <figcaption>Frota em operação</figcaption>
+              </figure>
+            </div>
+            <div class="col-6 col-md-4">
+              <figure class="gallery-item">
+                <img
+                  src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=600&h=400&fit=crop"
+                  alt="Equipe realizando carga de mudança"
+                  loading="lazy" />
+                <figcaption>Carga cuidadosa</figcaption>
+              </figure>
+            </div>
+            <div class="col-6 col-md-4">
+              <figure class="gallery-item">
+                <img
+                  src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop"
+                  alt="Caixas organizadas e protegidas"
+                  loading="lazy" />
+                <figcaption>Proteção da carga</figcaption>
+              </figure>
+            </div>
+            <div class="col-6 col-md-4">
+              <figure class="gallery-item">
+                <img src="images/caminhao.png" alt="Caminhão Iveco Daily da RDJ" loading="lazy" class="gallery-local" />
+                <figcaption>Iveco Daily — frota própria</figcaption>
+              </figure>
+            </div>
+            <div class="col-6 col-md-4">
+              <figure class="gallery-item">
+                <img
+                  src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=600&h=400&fit=crop"
+                  alt="Logística e transporte de volumes"
+                  loading="lazy" />
+                <figcaption>Logística ágil</figcaption>
+              </figure>
+            </div>
+            <div class="col-6 col-md-4">
+              <figure class="gallery-item">
+                <img
+                  src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&h=400&fit=crop"
+                  alt="Montagem de evento e mobiliário"
+                  loading="lazy" />
+                <figcaption>Transporte para eventos</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== REGIÕES ATENDIDAS ===================== -->
+      <section id="regioes" class="section-padding regioes-section">
+        <!-- Camada do mapa (satélite) — atrás do conteúdo -->
+        <div class="regioes-map-bg" aria-hidden="true">
+          <iframe
+            title="Mapa de cobertura da RDJ Transporte"
+            src="https://www.google.com/maps?q=-14.2350,-51.9253&z=4&t=k&hl=pt-BR&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="regioes-map-overlay" aria-hidden="true"></div>
+
+        <div class="container regioes-content">
+          <div class="row justify-content-center text-center mb-5">
+            <div class="col-lg-8">
+              <span class="section-tag">Cobertura Nacional</span>
+              <h2 class="section-title">Regiões Atendidas</h2>
+              <p class="section-text">Principais rotas e estados com maior volume de atendimento.</p>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-6 col-md-3">
+              <div class="region-card text-center h-100">
+                <i class="bi bi-geo-alt-fill"></i>
+                <h3 class="region-title">Sudeste</h3>
+                <p class="region-states">SP · RJ · MG · ES</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="region-card text-center h-100">
+                <i class="bi bi-geo-alt-fill"></i>
+                <h3 class="region-title">Sul</h3>
+                <p class="region-states">PR · SC · RS</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="region-card text-center h-100">
+                <i class="bi bi-geo-alt-fill"></i>
+                <h3 class="region-title">Nordeste</h3>
+                <p class="region-states">BA · PE · CE · RN</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="region-card text-center h-100">
+                <i class="bi bi-geo-alt-fill"></i>
+                <h3 class="region-title">Norte</h3>
+                <p class="region-states">PA · AM · TO</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== DEPOIMENTOS ===================== -->
+      <section id="depoimentos" class="section-padding bg-white">
+        <div class="container">
+          <div class="row justify-content-center text-center mb-5">
+            <div class="col-lg-8">
+              <span class="section-tag">Prova Social</span>
+              <h2 class="section-title">O Que Dizem Nossos Clientes</h2>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-md-4">
+              <article class="testimonial-card h-100">
+                <div class="testimonial-stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i
+                  ><i class="bi bi-star-fill"></i>
+                </div>
+                <p class="testimonial-text">
+                  “A mudança foi tranquila do começo ao fim. Equipe pontual, caminhão limpo e tudo chegou intacto. Recomendo demais.”
+                </p>
+                <div class="testimonial-author">
+                  <img src="https://i.pravatar.cc/80?img=47" alt="Foto de Marina Souza" width="48" height="48" loading="lazy" />
+                  <div>
+                    <strong>Marina Souza</strong>
+                    <span>São Paulo/SP · Mudança Residencial</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-4">
+              <article class="testimonial-card h-100">
+                <div class="testimonial-stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i
+                  ><i class="bi bi-star-fill"></i>
+                </div>
+                <p class="testimonial-text">“Contratamos para logística de um evento corporativo. Cumpriram o prazo e cuidaram muito bem do mobiliário.”</p>
+                <div class="testimonial-author">
+                  <img src="https://i.pravatar.cc/80?img=12" alt="Foto de Ricardo Lima" width="48" height="48" loading="lazy" />
+                  <div>
+                    <strong>Ricardo Lima</strong>
+                    <span>Rio de Janeiro/RJ · Eventos</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-4">
+              <article class="testimonial-card h-100">
+                <div class="testimonial-stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i
+                  ><i class="bi bi-star-fill"></i>
+                </div>
+                <p class="testimonial-text">
+                  “Orçamento transparente e comunicação ótima pelo WhatsApp. Trouxe nossos móveis de escritório sem dor de cabeça.”
+                </p>
+                <div class="testimonial-author">
+                  <img src="https://i.pravatar.cc/80?img=32" alt="Foto de Camila Ferreira" width="48" height="48" loading="lazy" />
+                  <div>
+                    <strong>Camila Ferreira</strong>
+                    <span>Curitiba/PR · Mudança Comercial</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== CONTATO / ORÇAMENTO ===================== -->
+      <section id="contato" class="section-padding bg-light-gray">
+        <div class="container">
+          <div class="row g-5 align-items-center">
+            <div class="col-lg-5">
+              <span class="section-tag">Vamos Conversar</span>
+              <h2 class="section-title">Solicite seu Orçamento</h2>
+              <p class="section-text mb-4">
+                Preencha o formulário e nossa equipe entrará em contato para entender os detalhes da sua mudança.
+              </p>
+
+              <ul class="contact-info-list list-unstyled">
+                <li>
+                  <i class="bi bi-whatsapp"></i>
+                  <span>(11) 99999-9999</span>
+                </li>
+                <li>
+                  <i class="bi bi-envelope-fill"></i>
+                  <span>contato@rdjtransporte.com.br</span>
+                </li>
+                <li>
+                  <i class="bi bi-clock-fill"></i>
+                  <span>Seg. a Sáb. — 07h às 19h</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-lg-7">
+              <form id="formOrcamento" class="orcamento-form" novalidate>
+                <!-- Honeypot anti-spam (Web3Forms) -->
+                <input type="checkbox" name="botcheck" class="d-none" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <input type="hidden" name="subject" value="Novo orçamento — RDJ Transporte">
+
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="nome" class="form-label">Nome completo</label>
+                    <input type="text" class="form-control" id="nome" name="name" placeholder="Seu nome" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="seu@email.com" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="telefone" class="form-label">Telefone / WhatsApp</label>
+                    <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(00) 00000-0000" maxlength="15" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="tipoServico" class="form-label">Tipo de serviço</label>
+                    <select class="form-select" id="tipoServico" name="tipo_servico" required>
+                      <option value="" selected disabled>Selecione...</option>
+                      <option value="Mudança Residencial">Mudança Residencial</option>
+                      <option value="Mudança Comercial">Mudança Comercial</option>
+                      <option value="Transporte para Eventos">Transporte para Eventos</option>
+                      <option value="Outro">Outro</option>
+                    </select>
+                  </div>
+                  <div class="col-md-12">
+                    <label for="cidade" class="form-label">Cidade / Região</label>
+                    <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Ex: São Paulo - SP">
+                  </div>
+                  <div class="col-12">
+                    <label for="mensagem" class="form-label">Detalhes da mudança</label>
+                    <textarea class="form-control" id="mensagem" name="message" rows="3"
+                      placeholder="Conte um pouco sobre o que precisa ser transportado" required></textarea>
+                  </div>
+                  <div class="col-12">
+                    <div id="formFeedback" class="form-feedback d-none" role="alert"></div>
+                    <button type="submit" class="btn btn-cta-orange btn-lg w-100" id="btnEnviarOrcamento">
+                      <i class="bi bi-send-fill"></i>
+                      <span class="btn-label">Enviar Solicitação</span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PERGUNTAS FREQUENTES ===================== -->
+      <section id="faq" class="section-padding faq-section">
+        <div class="container">
+          <div class="row justify-content-center text-center mb-5">
+            <div class="col-lg-8">
+              <h2 class="faq-title">Perguntas <span>Frequentes</span></h2>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="accordion accordion-flush faq-accordion" id="faqAccordion">
+                <div class="accordion-item faq-item">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed faq-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq1"
+                      aria-expanded="false"
+                      aria-controls="faq1">
+                      Atendem quais regiões?
+                    </button>
+                  </h3>
+                  <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body faq-body">
+                      Atendemos as regiões Sudeste, Sul, Nordeste e Norte, com logística planejada para mudanças residenciais, comerciais e transporte de
+                      cenários para eventos.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item faq-item">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed faq-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq2"
+                      aria-expanded="false"
+                      aria-controls="faq2">
+                      Como é feito o orçamento?
+                    </button>
+                  </h3>
+                  <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body faq-body">
+                      O orçamento é personalizado. Basta entrar em contato pelo WhatsApp ou preencher o formulário informando origem, destino, volume aproximado
+                      e tipo de serviço. Nossa equipe retorna com a proposta de forma rápida e transparente.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item faq-item">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed faq-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq3"
+                      aria-expanded="false"
+                      aria-controls="faq3">
+                      Como vocês protegem a carga?
+                    </button>
+                  </h3>
+                  <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body faq-body">
+                      Utilizamos materiais de proteção adequados, empacotamento cuidadoso e organização segura no caminhão. Toda a carga é acompanhada com
+                      atenção do início ao fim da entrega.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item faq-item">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed faq-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq4"
+                      aria-expanded="false"
+                      aria-controls="faq4">
+                      Fazem itens frágeis?
+                    </button>
+                  </h3>
+                  <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body faq-body">
+                      Sim. Itens frágeis recebem cuidado especial na acomodação e no transporte, com proteção reforçada para reduzir riscos durante o trajeto.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item faq-item">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed faq-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq5"
+                      aria-expanded="false"
+                      aria-controls="faq5">
+                      Há desmontagem / montagem?
+                    </button>
+                  </h3>
+                  <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body faq-body">
+                      Realizamos o serviço completo de carga e descarga, porém
+                      <strong>não trabalhamos com montagem e desmontagem de móveis</strong>.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item faq-item">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed faq-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq6"
+                      aria-expanded="false"
+                      aria-controls="faq6">
+                      Formas de pagamento?
+                    </button>
+                  </h3>
+                  <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body faq-body">
+                      Aceitamos as principais formas de pagamento (PIX, transferência e outras opções combinadas no orçamento). Os detalhes são confirmados
+                      junto com a proposta do serviço.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item faq-item">
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed faq-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq7"
+                      aria-expanded="false"
+                      aria-controls="faq7">
+                      Com quanto tempo de antecedência devo agendar?
+                    </button>
+                  </h3>
+                  <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body faq-body">
+                      Recomendamos agendar com a maior antecedência possível, especialmente em datas de maior movimento. Em geral, quanto antes você solicitar o
+                      orçamento, maior a chance de garantir a data ideal para a sua mudança.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="rdj-footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <a class="rdj-logo footer-logo d-flex align-items-center gap-2" href="#topo">
+              <img src="images/logo.svg" alt="Logo RDJ Transporte" class="rdj-logo-img" width="42" height="42" />
+              <span class="rdj-logo-text">RDJ <span>TRANSPORTE</span></span>
+            </a>
+            <p class="footer-text mt-3">
+              Transporte especializado para mudanças residenciais, comerciais e logística de eventos, com segurança e pontualidade em todo o Brasil.
+            </p>
+          </div>
+
+          <div class="col-lg-4">
+            <h4 class="footer-heading">Links Rápidos</h4>
+            <ul class="footer-links list-unstyled">
+              <li><a href="#topo">Início</a></li>
+              <li><a href="#sobre">Sobre Nós</a></li>
+              <li><a href="#como-funciona">Como Funciona</a></li>
+              <li><a href="#servicos">Serviços</a></li>
+              <li><a href="#galeria">Galeria</a></li>
+              <li><a href="#depoimentos">Depoimentos</a></li>
+              <li><a href="#faq">Perguntas Frequentes</a></li>
+              <li><a href="#contato">Contato</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4">
+            <h4 class="footer-heading">Contato</h4>
+            <ul class="footer-contact list-unstyled">
+              <li><i class="bi bi-whatsapp"></i> (11) 99852-3500</li>
+              <li><i class="bi bi-envelope-fill"></i> contato@rdjtransporte.com.br</li>
+              <li><i class="bi bi-geo-alt-fill"></i> Atendimento em todo o Brasil</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="col-lg-4">
-          <h4 class="footer-heading">Contato</h4>
-          <ul class="footer-contact list-unstyled">
-            <li><i class="bi bi-whatsapp"></i> (11) 99999-9999</li>
-            <li><i class="bi bi-envelope-fill"></i> contato@rdjtransporte.com.br</li>
-            <li><i class="bi bi-geo-alt-fill"></i> Atendimento em todo o Brasil</li>
-          </ul>
+        <hr class="footer-divider" />
+
+        <div class="row">
+          <div class="col-12 text-center">
+            <p class="footer-copy mb-0">&copy; <span id="anoAtual"></span> RDJ TRANSPORTE. Todos os direitos reservados.</p>
+          </div>
         </div>
       </div>
+    </footer>
 
-      <hr class="footer-divider">
+    <!-- Botão flutuante WhatsApp -->
+    <a
+      href="https://wa.me/5511998523500?text=Ol%C3%A1!%20Quero%20solicitar%20um%20or%C3%A7amento%20de%20mudan%C3%A7a."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="whatsapp-float"
+      aria-label="Falar no WhatsApp">
+      <i class="bi bi-whatsapp"></i>
+    </a>
 
-      <div class="row">
-        <div class="col-12 text-center">
-          <p class="footer-copy mb-0">
-            &copy; <span id="anoAtual"></span> RDJ TRANSPORTE. Todos os direitos reservados.
-          </p>
-        </div>
-      </div>
-    </div>
-  </footer>
+    <!-- Bootstrap 5 JS Bundle (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Botão flutuante WhatsApp -->
-  <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Quero%20solicitar%20um%20or%C3%A7amento%20de%20mudan%C3%A7a."
-     target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Falar no WhatsApp">
-    <i class="bi bi-whatsapp"></i>
-  </a>
+    <!-- Config (gerado a partir do .env — rode: node scripts/sync-env.js) -->
+    <script src="js/config.js"></script>
 
-  <!-- Bootstrap 5 JS Bundle (CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- JS Customizado -->
-  <script src="js/script.js"></script>
-</body>
+    <!-- JS Customizado -->
+    <script src="js/script.js"></script>
+  </body>
 </html>
