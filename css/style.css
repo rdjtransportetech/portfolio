@@ -981,7 +981,7 @@ a {
 }
 
 .inclusao-title {
-  font-size: 1.15rem;
+  font-size: 1.3rem;
   color: var(--rdj-navy);
   margin-bottom: 16px;
   display: flex;
@@ -1007,7 +1007,7 @@ a {
   position: relative;
   padding-left: 22px;
   margin-bottom: 10px;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: #444;
 }
 
