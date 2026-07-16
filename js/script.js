@@ -1,7 +1,7 @@
 /* =========================================================
    RDJ TRANSPORTE — Landing Page
    JavaScript Vanilla: header fixo, scroll suave,
-   máscara de telefone e envio do formulário via Web3Forms.
+   máscara de telefone, Web3Forms e consentimento do Analytics.
    ========================================================= */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -228,6 +228,86 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!el.classList.contains('is-visible')) {
         observer.observe(el);
       }
+    });
+  }
+
+  /* ---------------------------------------------------------
+     7. CONSENTIMENTO DE COOKIES + GOOGLE ANALYTICS (gtag)
+        - Só carrega o gtag se o usuário clicar em "Permitir"
+        - Se recusar, nenhum script de analytics é injetado
+  --------------------------------------------------------- */
+  var GA_MEASUREMENT_ID = 'G-XPPNHWXG1B';
+  var CONSENT_STORAGE_KEY = 'rdj_analytics_consent';
+  var cookieConsent = document.getElementById('cookieConsent');
+  var cookieAccept = document.getElementById('cookieAccept');
+  var cookieReject = document.getElementById('cookieReject');
+
+  function loadGoogleAnalytics() {
+    if (window.__rdjGtagLoaded) return;
+    window.__rdjGtagLoaded = true;
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    window.gtag = gtag;
+
+    gtag('js', new Date());
+    gtag('config', GA_MEASUREMENT_ID, {
+      anonymize_ip: true
+    });
+
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
+    document.head.appendChild(script);
+  }
+
+  function hideConsentCard() {
+    if (cookieConsent) {
+      cookieConsent.classList.add('d-none');
+    }
+  }
+
+  function showConsentCard() {
+    if (cookieConsent) {
+      cookieConsent.classList.remove('d-none');
+    }
+  }
+
+  var savedConsent = null;
+  try {
+    savedConsent = localStorage.getItem(CONSENT_STORAGE_KEY);
+  } catch (e) {
+    savedConsent = null;
+  }
+
+  if (savedConsent === 'accepted') {
+    loadGoogleAnalytics();
+    hideConsentCard();
+  } else if (savedConsent === 'rejected') {
+    hideConsentCard();
+  } else {
+    showConsentCard();
+  }
+
+  if (cookieAccept) {
+    cookieAccept.addEventListener('click', function () {
+      try {
+        localStorage.setItem(CONSENT_STORAGE_KEY, 'accepted');
+      } catch (e) { /* storage indisponível */ }
+      loadGoogleAnalytics();
+      hideConsentCard();
+    });
+  }
+
+  if (cookieReject) {
+    cookieReject.addEventListener('click', function () {
+      try {
+        localStorage.setItem(CONSENT_STORAGE_KEY, 'rejected');
+      } catch (e) { /* storage indisponível */ }
+      hideConsentCard();
+      // Não carrega gtag — nenhum dado de analytics é capturado
     });
   }
 

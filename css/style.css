@@ -796,6 +796,95 @@ a {
 }
 
 /* =========================================================
+   COOKIE CONSENT — card canto esquerdo
+   ========================================================= */
+.cookie-consent {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 1000;
+  width: min(320px, calc(100vw - 40px));
+  background-color: var(--rdj-white);
+  border-radius: 14px;
+  padding: 20px 18px 16px;
+  box-shadow: 0 12px 32px rgba(18, 37, 63, 0.22);
+  border: 1px solid rgba(27, 54, 93, 0.1);
+  animation: cookie-slide-in 0.35s ease;
+}
+
+.cookie-consent__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: rgba(255, 111, 0, 0.12);
+  color: var(--rdj-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.cookie-consent__title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--rdj-navy);
+  margin-bottom: 8px;
+}
+
+.cookie-consent__text {
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.cookie-consent__actions {
+  display: flex;
+  gap: 8px;
+}
+
+.cookie-consent__btn {
+  flex: 1;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.cookie-consent__btn--ghost {
+  background-color: transparent;
+  border: 1px solid rgba(27, 54, 93, 0.25);
+  color: var(--rdj-navy);
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+.cookie-consent__btn--ghost:hover {
+  background-color: var(--rdj-gray-light);
+  border-color: var(--rdj-navy);
+  color: var(--rdj-navy);
+}
+
+@keyframes cookie-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .cookie-consent {
+    left: 12px;
+    bottom: 88px; /* acima do botão WhatsApp em mobile */
+  }
+}
+
+/* =========================================================
    NÚMEROS / STATS
    ========================================================= */
 .stat-card {
