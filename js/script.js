@@ -312,3 +312,33 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
+(function resetCookiesGlobal() {
+    // Definimos uma versão para o reset. Se precisar resetar de novo no futuro, mude para 'v2'
+    const RESET_VERSION = 'v1'; 
+    const MARKER_NAME = 'site_reset_marker';
+
+    // Verifica se este usuário já passou pelo reset desta versão
+    if (localStorage.getItem(MARKER_NAME) !== RESET_VERSION) {
+        
+        // 1. Captura todos os cookies do site
+        const cookies = document.cookie.split(";");
+
+        // 2. Varre e expira cada um deles
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i];
+            const eqPos = cookie.indexOf("=");
+            const name = eqPos > -1 ? cookie.substr(0, eqPos).trim() : cookie.trim();
+            
+            // Força a expiração do cookie mudando a data para o passado (1970)
+            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+            
+            // Se o seu site usa subdomínios no GitHub Pages, tente limpar o domínio principal também
+            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=" + window.location.hostname;
+        }
+
+        // 3. Salva o marcador para que o navegador não repita o processo no próximo clique
+        localStorage.setItem(MARKER_NAME, RESET_VERSION);
+        
+        console.log("Cookies resetados com sucesso para a versão " + RESET_VERSION);
+    }
+})();
